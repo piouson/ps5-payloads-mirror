@@ -1,5 +1,28 @@
 [
   {
+    "name": "ShadowMountPlus",
+    "filename": "ShadowMountPlus_1.6test11.elf",
+    "url": "https://github.com/itsPLK/ps5-payloads-mirror/releases/download/payloads-mirror/ShadowMountPlus_1.6test11.elf",
+    "source": "https://github.com/drakmor/ShadowMountPlus/releases",
+    "source_direct": "https://github.com/drakmor/ShadowMountPlus/releases/download/1.6test11/ShadowMountPlus_1.6test11.zip",
+    "extract_file": "shadowmountplus.elf",
+    "description": "A fully automated, background 'Auto-Mounter' payload for Jailbroken PlayStation 5 consoles.",
+    "last_update": "2026-05-13",
+    "version": "1.6test11",
+    "checksum": "035de95e2808fa8f285523e061f39df97732ab56b80628f5989cd167b1e6f6df"
+  },
+  {
+    "name": "websrv",
+    "filename": "websrv_v0.31.elf",
+    "url": "https://github.com/itsPLK/ps5-payloads-mirror/releases/download/payloads-mirror/websrv_v0.31.elf",
+    "source": "https://github.com/ps5-payload-dev/websrv/releases",
+    "source_direct": "https://github.com/ps5-payload-dev/websrv/releases/download/v0.31/websrv-ps5.elf",
+    "description": "A simple web server that accepts connections on port 8080",
+    "last_update": "2026-05-13",
+    "version": "v0.31",
+    "checksum": "bfe1664adf119a953a7a9c0aef2f817adadd014823eabfa3ad3d0de2ab0aa8c2"
+  },
+  {
     "name": "ftpsrv",
     "filename": "ftpsrv_v0.20.elf",
     "url": "https://github.com/itsPLK/ps5-payloads-mirror/releases/download/payloads-mirror/ftpsrv_v0.20.elf",
@@ -42,18 +65,6 @@
     "last_update": "2026-05-12",
     "version": "v0.23",
     "checksum": "092d16ee0ede0c494947efd38d1a17bbd7cc4b022d3858ea898833c188c703e8"
-  },
-  {
-    "name": "ShadowMountPlus",
-    "filename": "ShadowMountPlus_1.6beta10.elf",
-    "url": "https://github.com/itsPLK/ps5-payloads-mirror/releases/download/payloads-mirror/ShadowMountPlus_1.6beta10.elf",
-    "source": "https://github.com/drakmor/ShadowMountPlus/releases",
-    "source_direct": "https://github.com/drakmor/ShadowMountPlus/releases/download/1.6beta10/ShadowMountPlus_1.6beta10.zip",
-    "extract_file": "shadowmountplus.elf",
-    "description": "A fully automated, background 'Auto-Mounter' payload for Jailbroken PlayStation 5 consoles.",
-    "last_update": "2026-05-10",
-    "version": "1.6beta10",
-    "checksum": "ecca6e244bc3f7436f55ac3b2fbb2de397100920c2262e1e95a933a27bfe5cae"
   },
   {
     "name": "kstuff-toggle",
@@ -99,17 +110,6 @@
     "last_update": "2026-04-30",
     "version": "0.1",
     "checksum": "d74e4cd119b2bb1fd423f2f5b1c9a7f096b3e588c753af1ab48b983d56216a52"
-  },
-  {
-    "name": "websrv",
-    "filename": "websrv_v0.30.1.elf",
-    "url": "https://github.com/itsPLK/ps5-payloads-mirror/releases/download/payloads-mirror/websrv_v0.30.1.elf",
-    "source": "https://github.com/ps5-payload-dev/websrv/releases",
-    "source_direct": "https://github.com/ps5-payload-dev/websrv/releases/download/v0.30.1/websrv-ps5.elf",
-    "description": "A simple web server that accepts connections on port 8080",
-    "last_update": "2026-04-03",
-    "version": "v0.30.1",
-    "checksum": "5b5d55ba51c8b5a4fb9929f690efc4ce488f86fe3d0f22223106643be9d5c2ab"
   },
   {
     "name": "garlic-savemgr",
