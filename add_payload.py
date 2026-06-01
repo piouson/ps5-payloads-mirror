@@ -16,12 +16,13 @@ PAYLOADS_DIR = "payloads"
 BASE_URL = "https://github.com/itsPLK/ps5-payloads-mirror/releases/download/payloads-mirror"
 
 def get_repo_info(url):
-    match = re.search(r"github\.com/([^/]+)/([^/]+)", url)
+    match = re.search(r"https?://([^/]+)/([^/]+)/([^/]+)", url)
     if match:
-        owner = match.group(1)
-        repo = match.group(2).rstrip('/')
-        return owner, repo
-    return None, None
+        domain = match.group(1)
+        owner = match.group(2)
+        repo = match.group(3).rstrip('/')
+        return domain, owner, repo
+    return None, None, None
 
 def download_file(url, filename):
     if not os.path.exists(PAYLOADS_DIR):
@@ -73,18 +74,24 @@ def add_payload():
         print("Error: URL is required.")
         return
         
-    owner, repo = get_repo_info(url)
+    domain, owner, repo = get_repo_info(url)
     if not owner:
-        print("Error: Could not parse GitHub owner/repo from URL.")
+        print("Error: Could not parse Git domain/owner/repo from URL.")
         return
         
     description = input("Description (optional): ").strip()
     
-    print(f"Fetching latest release info for {owner}/{repo}...")
+    print(f"Fetching latest release info for {owner}/{repo} on {domain}...")
     try:
-        cmd = ["gh", "api", f"repos/{owner}/{repo}/releases/latest"]
-        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-        release = json.loads(result.stdout)
+        if domain == "github.com":
+            cmd = ["gh", "api", f"repos/{owner}/{repo}/releases/latest"]
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            release = json.loads(result.stdout)
+        else:
+            api_url = f"https://{domain}/api/v1/repos/{owner}/{repo}/releases/latest"
+            req = urllib.request.Request(api_url, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req) as response:
+                release = json.loads(response.read().decode('utf-8'))
     except Exception as e:
         print(f"Error fetching release info: {e}")
         return
@@ -121,7 +128,7 @@ def add_payload():
     except FileNotFoundError:
         payloads = []
 
-    source_url = f"https://github.com/{owner}/{repo}/releases"
+    source_url = f"https://{domain}/{owner}/{repo}/releases"
     if any(p.get("source") == source_url for p in payloads):
         print(f"Error: A payload from {source_url} already exists in the JSON.")
         return

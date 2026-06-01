@@ -15,28 +15,38 @@ PAYLOADS_DIR = "payloads"
 BASE_URL = "https://github.com/itsPLK/ps5-payloads-mirror/releases/download/payloads-mirror"
 
 def get_repo_info(url):
-    # Extract owner and repo from various GitHub URL formats
-    match = re.search(r"github\.com/([^/]+)/([^/]+)", url)
+    # Extract domain, owner and repo from various Git URL formats
+    match = re.search(r"https?://([^/]+)/([^/]+)/([^/]+)", url)
     if match:
-        owner = match.group(1)
-        repo = match.group(2).rstrip('/')
+        domain = match.group(1)
+        owner = match.group(2)
+        repo = match.group(3).rstrip('/')
         if repo.endswith('.git'):
             repo = repo[:-4]
         if repo == 'releases':
             parts = url.split('/')
-            idx = parts.index('github.com')
-            owner = parts[idx+1]
-            repo = parts[idx+2]
-        return owner, repo
-    return None, None
+            try:
+                idx = parts.index(domain)
+                owner = parts[idx+1]
+                repo = parts[idx+2]
+            except ValueError:
+                pass
+        return domain, owner, repo
+    return None, None, None
 
-def get_latest_release(owner, repo):
+def get_latest_release(domain, owner, repo):
     try:
-        cmd = ["gh", "api", f"repos/{owner}/{repo}/releases/latest"]
-        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
-        return json.loads(result.stdout)
+        if domain == "github.com":
+            cmd = ["gh", "api", f"repos/{owner}/{repo}/releases/latest"]
+            result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+            return json.loads(result.stdout)
+        else:
+            api_url = f"https://{domain}/api/v1/repos/{owner}/{repo}/releases/latest"
+            req = urllib.request.Request(api_url, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req) as response:
+                return json.loads(response.read().decode('utf-8'))
     except Exception as e:
-        print(f"Error fetching {owner}/{repo}: {e}")
+        print(f"Error fetching {domain}/{owner}/{repo}: {e}")
         return None
 
 def download_file(url, filename):
@@ -195,7 +205,7 @@ def update_payloads():
     updated = False
     for item in payloads:
         source = item.get("source")
-        if not source or "github.com" not in source:
+        if not source:
             # Handle ps5debug case
             if item.get("name") == "ps5debug":
                 if not item["url"].startswith(BASE_URL):
@@ -203,12 +213,12 @@ def update_payloads():
                      updated = True
             continue
             
-        owner, repo_name = get_repo_info(source)
+        domain, owner, repo_name = get_repo_info(source)
         if not owner:
             continue
             
-        print(f"Checking {owner}/{repo_name}...")
-        release = get_latest_release(owner, repo_name)
+        print(f"Checking {owner}/{repo_name} on {domain}...")
+        release = get_latest_release(domain, owner, repo_name)
         if not release:
             continue
             
