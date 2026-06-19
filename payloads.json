@@ -9,5 +9,38 @@
     "last_update": "2026-06-06",
     "version": "v1.6.7",
     "checksum": "eb597cc3d88dee1c4a07b9c1124826d3985adbe850bad9334c4283fc224a67ca"
+  },
+  {
+    "name": "game-compressor",
+    "filename": "game-compressor.elf",
+    "url": "https://github.com/juma-sayeh/PS5-Game-Compressor/releases/download/v1.0.1/game-compressor.elf",
+    "source": "https://github.com/juma-sayeh/PS5-Game-Compressor/releases",
+    "source_direct": "https://github.com/juma-sayeh/PS5-Game-Compressor/releases/download/v1.0.1/game-compressor.elf",
+    "description": "Standalone PS5 payload for compressing, unpacking, validating, repairing, and moving ShadowMountPlus-mounted games from a simple web UI",
+    "last_update": "2026-06-18",
+    "version": "v1.0.1",
+    "checksum": "64dba49ef83b2508de4fb99e8b4cc86816812ea7bd70696a29c6b13c95994e9d"
+  },
+  {
+    "name": "file-explorer-core",
+    "filename": "file-explorer-core.elf",
+    "url": "https://github.com/juma-sayeh/PS5-File-Explorer/releases/download/file-explorer-v0.2.1/file-explorer-core.elf",
+    "source": "https://github.com/juma-sayeh/PS5-File-Explorer/releases",
+    "source_direct": "https://github.com/juma-sayeh/PS5-File-Explorer/releases/download/file-explorer-v0.2.1/file-explorer-core.elf",
+    "description": "File Explorer is a small PS5 payload that starts a browser-based file manager on port 5905",
+    "last_update": "2026-06-19",
+    "version": "v0.2.1",
+    "checksum": "6d4b905b42727dddeaedddb2a657ed0d4e7110ddd068a6daab0aafb2ba32604b"
+  },
+  {
+    "name": "file-explorer",
+    "filename": "file-explorer.elf",
+    "url": "https://github.com/juma-sayeh/PS5-File-Explorer/releases/download/file-explorer-v0.2.1/file-explorer.elf",
+    "source": "https://github.com/juma-sayeh/PS5-File-Explorer/releases",
+    "source_direct": "https://github.com/juma-sayeh/PS5-File-Explorer/releases/download/file-explorer-v0.2.1/file-explorer.elf",
+    "description": "File Explorer is a small PS5 payload that starts a browser-based file manager on port 5905",
+    "last_update": "2026-06-19",
+    "version": "v0.2.1",
+    "checksum": "1013c23b12980e1bc97decc150c8cd5abc8447dc03cf86dbd106266dd000a6e1"
   }
 ]
