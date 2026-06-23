@@ -42,5 +42,16 @@
     "last_update": "2026-06-19",
     "version": "v0.2.1",
     "checksum": "1013c23b12980e1bc97decc150c8cd5abc8447dc03cf86dbd106266dd000a6e1"
+  },
+  {
+    "name": "chukei-ps5",
+    "filename": "chukei-ps5.elf",
+    "url": "https://github.com/Al-Azif/chukei-dns/releases/download/0.9.0/chukei-ps5.elf",
+    "source": "https://github.com/Al-Azif/chukei-dns/releases",
+    "source_direct": "https://github.com/Al-Azif/chukei-dns/releases/download/0.9.0/chukei-ps5.elf",
+    "description": "Lightweight DNS relay server with DNS-over-HTTPS (DoH) and man-in-the-middle (MitM) functionality",
+    "last_update": "2026-04-11",
+    "version": "v0.9.0",
+    "checksum": "0cf13e1ed87b57ffa4fdcfca5d9afe1572be29b4f632677cedf17657a972d750"
   }
 ]
