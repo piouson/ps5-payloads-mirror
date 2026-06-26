@@ -56,7 +56,7 @@
   },
   {
     "name": "lapy_jb",
-    "filename": "chukei-ps5.elf",
+    "filename": "lapy_jb_daemon.elf",
     "url": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon/raw/refs/heads/main/lapy_jb_daemon.elf",
     "source": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon",
     "source_direct": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon/raw/refs/heads/main/lapy_jb_daemon.elf",
