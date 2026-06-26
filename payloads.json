@@ -53,5 +53,16 @@
     "last_update": "2026-04-11",
     "version": "v0.9.0",
     "checksum": "0cf13e1ed87b57ffa4fdcfca5d9afe1572be29b4f632677cedf17657a972d750"
+  },
+  {
+    "name": "lapy_jb",
+    "filename": "chukei-ps5.elf",
+    "url": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon/raw/refs/heads/main/lapy_jb_daemon.elf",
+    "source": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon",
+    "source_direct": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon/raw/refs/heads/main/lapy_jb_daemon.elf",
+    "description": "Mimics etaHEN's jailbreak-on-demand daemon API for Sony app PRXes",
+    "last_update": "2026-05-11",
+    "version": "v0.0.0",
+    "checksum": "e8230ac4597b8f0388e75d7515ad1a2e251c4589cc3b8d56a483ffae73627eed"
   }
 ]
