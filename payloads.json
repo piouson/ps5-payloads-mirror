@@ -55,6 +55,17 @@
     "checksum": "0cf13e1ed87b57ffa4fdcfca5d9afe1572be29b4f632677cedf17657a972d750"
   },
   {
+    "name": "ps4mount",
+    "filename": "ps4mount.elf",
+    "url": "https://github.com/gasb07/ps4mount/releases/download/v0.7.0/ps4mount.elf",
+    "source": "https://github.com/gasb07/ps4mount",
+    "source_direct": "https://github.com/gasb07/ps4mount/releases/download/v0.7.0/ps4mount.elf",
+    "description": "Allows for PKG games on USB external devices to mount on jailbroken PS5s without installing on internal storage or PS5 formatted USB storage",
+    "last_update": "2026-10-24",
+    "version": "v0.7.0",
+    "checksum": "9a99fdeb2be8ebee823b14636e0aac5721386feabcfe97e27dc6d5b3e4158bb7"
+  },
+  {
     "name": "lapy_jb",
     "filename": "lapy_jb_daemon.elf",
     "url": "https://github.com/ArkSama/PS5-Lapy-JB-Daemon/raw/refs/heads/main/lapy_jb_daemon.elf",
